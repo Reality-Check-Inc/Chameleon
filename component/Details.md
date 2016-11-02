@@ -776,5 +776,3 @@ Chameleon was developed by **Vicc Alexander** [(@ViccsMind)](https://twitter.com
 ## 📄 Change Log
 
 ### See [Changelog.md](https://github.com/ViccAlexander/Chameleon/blob/master/CHANGELOG.md) 👀
-
-1

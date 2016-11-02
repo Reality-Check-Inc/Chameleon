@@ -2,7 +2,7 @@
 
 Note: This component depends on [Chameleon](https://github.com/ViccAlexander/Chameleon), which is subject to the [MIT License](https://github.com/ViccAlexander/Chameleon/blob/master/LICENSE.md)
 
-### Reality Check Inc Component for Chameleon
+### Reality Check Inc Component for Chameleon-RCI
 
 **The MIT License (MIT)**
 
