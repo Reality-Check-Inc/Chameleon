@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cake.Xamarin.Build</name>
+    </assembly>
+    <members>
+        <member name="T:Cake.Xamarin.Build.XamarinBuildTasksAliases">
+            <summary>
+            Xamarin Build Task aliases.
+            </summary>
+        </member>
+        <member name="M:Cake.Xamarin.Build.XamarinBuildTasksAliases.SetupXamarinBuildTasks(Cake.Core.ICakeContext,Cake.Xamarin.Build.BuildSpec,System.Collections.Generic.IReadOnlyList{Cake.Core.CakeTask},System.Func{System.String,Cake.Core.CakeTaskBuilder{Cake.Core.ActionTask}})">
+            <summary>
+            Creates and/or sets up Task dependency chain for Xamarin related build tasks
+            </summary>
+            <param name="context">The context.</param>
+            <param name="buildSpec">The build spec info to setup with</param>
+            <param name="tasks">The currently executing cake script's Tasks list</param>
+            <param name="addTaskDelegate">The delegate used to add a new Task to the currently executing cake script</param>
+        </member>
+        <member name="M:Cake.Xamarin.Build.XamarinBuildTasksAliases.SetupXamarinBuildTasks(Cake.Core.ICakeContext,Cake.Xamarin.Build.BuildSpec,Cake.Xamarin.Build.XamarinBuildTasksAliases.XamarinBuildTaskSettings,System.Collections.Generic.IReadOnlyList{Cake.Core.CakeTask},System.Func{System.String,Cake.Core.CakeTaskBuilder{Cake.Core.ActionTask}})">
+            <summary>
+            Creates and/or sets up Task dependency chain for Xamarin related build tasks
+            </summary>
+            <param name="context">The context.</param>
+            <param name="buildSpec">The build spec info to setup with</param>
+            <param name="settings">The settings to use for setting up the build tasks</param>
+            <param name="tasks">The currently executing cake script's Tasks list</param>
+            <param name="addTaskDelegate">The delegate used to add a new Task to the currently executing cake script</param>        [CakeMethodAlias]
+        </member>
+        <member name="M:Cake.Xamarin.Build.XamarinBuildTasksAliases.RunMake(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,System.String)">
+            <summary>
+            Runs a make file on non-windows systems
+            </summary>
+            <param name="context">The context.</param>
+            <param name="directory">Directory where makefile exists</param>
+            <param name="target">The target to run in the makefile (Default is all)</param>
+        </member>
+        <member name="M:Cake.Xamarin.Build.XamarinBuildTasksAliases.RunLipoCreate(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,Cake.Core.IO.FilePath[])">
+            <summary>
+            Runs lipo -create to merge multiple input static libs into one fat file on Mac
+            </summary>
+            <param name="context">The context.</param>
+            <param name="directory">The working directory.</param>
+            <param name="output">The output fat file.</param>
+            <param name="inputs">The individual architecture static library files.</param>
+        </member>
+        <member name="M:Cake.Xamarin.Build.XamarinBuildTasksAliases.RunLibtoolStatic(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,Cake.Core.IO.FilePath[])">
+            <summary>
+            Runs libtool -static
+            </summary>
+            <param name="context">The context.</param>
+            <param name="directory">The working directory.</param>
+            <param name="output">The output file.</param>
+            <param name="inputs">The input files.</param>
+        </member>
+        <member name="M:Cake.Xamarin.Build.XamarinBuildTasksAliases.BuildXCodeFatLibrary(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,System.String,System.String,Cake.Core.IO.FilePath,Cake.Core.IO.DirectoryPath)">
+            <summary>
+            Builds an XCode project with xcodebuild and combines architectures into a fat library
+            </summary>
+            <param name="context">The context.</param>
+            <param name="xcodeProject">The xcodeproj to build</param>
+            <param name="target">The xcode project target to build</param>
+            <param name="libraryTitle">Optional library name</param>
+            <param name="fatLibrary">Optional output fat library name</param>
+            <param name="workingDirectory">Optional working directory</param>
+        </member>
+        <member name="M:Cake.Xamarin.Build.XamarinBuildTasksAliases.CleanXCodeBuild(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.DirectoryPath)">
+            <summary>
+            Cleans an xcodeproj build, and removes any *.a static libraries
+            </summary>
+            <param name="context">The context.</param>
+            <param name="projectRoot">Optional project root path.</param>
+            <param name="workingDirectory">Optional working directory.</param>
+        </member>
+        <member name="M:Cake.Xamarin.Build.XamarinBuildTasksAliases.CreatePodfile(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Creates a Podfile
+            </summary>
+            <param name="context">The context.</param>
+            <param name="podfilePath">The Podfile filename to create</param>
+            <param name="platform">The platform to specify inside the Podfile</param>
+            <param name="platformVersion">The platform version to specify inside the Podfile</param>
+            <param name="pods">Key/Value pairs of Pod ID and Version to include in the Podfile</param>
+        </member>
+        <member name="M:Cake.Xamarin.Build.XamarinBuildTasksAliases.InstallCocoaPods(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Creates a Podfile and Installs CocoaPods
+            </summary>
+            <param name="context">The context.</param>
+            <param name="podfilePath">The Podfile filename to create.</param>
+            <param name="platform">The platform to specify inside the Podfile</param>
+            <param name="platformVersion">The platform version to specify inside the Podfile</param>
+            <param name="pods">Key/Value pairs of Pod ID and Version to include in the Podfile</param>
+        </member>
+        <member name="M:Cake.Xamarin.Build.XamarinBuildTasksAliases.DownloadFile(Cake.Core.ICakeContext,System.String,Cake.Core.IO.FilePath,Cake.Xamarin.Build.DownloadFileSettings)">
+            <summary>
+            Downloads a file
+            </summary>
+            <param name="context">The context.</param>
+            <param name="url">The url to download.</param>
+            <param name="downloadTo">The file to download to.</param>
+            <param name="settings">The download settings.</param>
+        </member>
+        <member name="M:Cake.Xamarin.Build.XamarinBuildTasksAliases.PackNuGets(Cake.Core.ICakeContext,Cake.Xamarin.Build.NuGetInfo[])">
+            <summary>
+            Packages the given NuGet (nuspec) information items
+            </summary>
+            <param name="context">The context.</param>
+            <param name="nugets">The nugets to pack.</param>
+        </member>
+        <member name="T:Cake.Xamarin.Build.NamespaceDoc">
+            <summary>
+            This namespace contain types 
+            representing tasks used for Xamarin product builds
+            </summary>
+        </member>
+    </members>
+</doc>

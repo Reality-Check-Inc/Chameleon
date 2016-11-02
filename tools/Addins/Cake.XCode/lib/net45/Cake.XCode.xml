@@ -1,0 +1,450 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cake.XCode</name>
+    </assembly>
+    <members>
+        <member name="T:Cake.CocoaPods.CocoaPodSettings">
+            <summary>
+            CocoaPod settings.
+            </summary>
+        </member>
+        <member name="P:Cake.CocoaPods.CocoaPodSettings.ToolPath">
+            <summary>
+            Gets or sets the path to pod executable.
+            </summary>
+            <value>The tool path.</value>
+        </member>
+        <member name="T:Cake.CocoaPods.CocoaPodInstallSettings">
+            <summary>
+            CocoaPod install settings.
+            </summary>
+        </member>
+        <member name="P:Cake.CocoaPods.CocoaPodInstallSettings.NoIntegrate">
+            <summary>
+            Gets or sets a value indicating whether or not to integrate the pods into an xcode project.
+            </summary>
+            <value><c>true</c> to not integrate into a project; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.CocoaPods.CocoaPodInstallSettings.NoClean">
+            <summary>
+            Gets or sets a value indicating whether or not to clean .
+            </summary>
+            <value><c>true</c> if no cleaning should occur; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.CocoaPods.CocoaPodInstallSettings.NoRepoUpdate">
+            <summary>
+            Gets or sets a value indicating whether or not to update the repo.
+            </summary>
+            <value><c>true</c> if repo should not be updated; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.CocoaPods.CocoaPodInstallSettings.Silent">
+            <summary>
+            Gets or sets a value indicating whether the output should be silent.
+            </summary>
+            <value><c>true</c> if output should be silent; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.CocoaPods.CocoaPodInstallSettings.Verbose">
+            <summary>
+            Gets or sets a value indicating whether the output should be verbose.
+            </summary>
+            <value><c>true</c> if output should be verbose; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.CocoaPods.CocoaPodInstallSettings.NoAnsi">
+            <summary>
+            Gets or sets a value indicating whether the -noansi flag should be set
+            </summary>
+            <value><c>true</c> if -noansi flag should be set; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Cake.CocoaPods.CocoaPodUpdateSettings">
+            <summary>
+            CocoaPod update settings.
+            </summary>
+        </member>
+        <member name="P:Cake.CocoaPods.CocoaPodUpdateSettings.NoIntegrate">
+            <summary>
+            Gets or sets a value indicating whether or not to integrate the pods into an xcode project.
+            </summary>
+            <value><c>true</c> to not integrate into a project; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.CocoaPods.CocoaPodUpdateSettings.NoClean">
+            <summary>
+            Gets or sets a value indicating whether or not to clean .
+            </summary>
+            <value><c>true</c> if no cleaning should occur; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.CocoaPods.CocoaPodUpdateSettings.NoRepoUpdate">
+            <summary>
+            Gets or sets a value indicating whether or not to update the repo.
+            </summary>
+            <value><c>true</c> if repo should not be updated; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.CocoaPods.CocoaPodUpdateSettings.Silent">
+            <summary>
+            Gets or sets a value indicating whether the output should be silent.
+            </summary>
+            <value><c>true</c> if output should be silent; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.CocoaPods.CocoaPodUpdateSettings.Verbose">
+            <summary>
+            Gets or sets a value indicating whether the output should be verbose.
+            </summary>
+            <value><c>true</c> if output should be verbose; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cake.CocoaPods.CocoaPodUpdateSettings.NoAnsi">
+            <summary>
+            Gets or sets a value indicating whether the -noansi flag should be set
+            </summary>
+            <value><c>true</c> if -noansi flag should be set; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Cake.CocoaPods.CocoaPodAliases">
+            <summary>
+            Cocoapods aliases.
+            </summary>
+        </member>
+        <member name="M:Cake.CocoaPods.CocoaPodAliases.CocoaPodInstall(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath)">
+            <summary>
+            Runs pod install for the given project directory
+            </summary>
+            <param name="context">The context.</param>
+            <param name="projectDirectory">The project directory.</param>
+        </member>
+        <member name="M:Cake.CocoaPods.CocoaPodAliases.CocoaPodInstall(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.CocoaPods.CocoaPodInstallSettings)">
+            <summary>
+            Runs pod install for the given project directory
+            </summary>
+            <param name="context">The context.</param>
+            <param name="projectDirectory">The project directory.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.CocoaPods.CocoaPodAliases.CocoaPodUpdate(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath)">
+            <summary>
+            Runs pod update for the given project directory, updating all pods
+            </summary>
+            <param name="context">The context.</param>
+            <param name="projectDirectory">The project directory.</param>
+        </member>
+        <member name="M:Cake.CocoaPods.CocoaPodAliases.CocoaPodUpdate(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.CocoaPods.CocoaPodUpdateSettings)">
+            <summary>
+            Runs pod update for the given project directory, updating all pods
+            </summary>
+            <param name="context">The context.</param>
+            <param name="projectDirectory">The project directory.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.CocoaPods.CocoaPodAliases.CocoaPodUpdate(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,System.String[],Cake.CocoaPods.CocoaPodUpdateSettings)">
+            <summary>
+            Runs pod update for the given project directory, updating only the specified pods
+            </summary>
+            <param name="context">The context.</param>
+            <param name="projectDirectory">The project directory.</param>
+            <param name="podNames">The specific pod names to update.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.CocoaPods.CocoaPodAliases.CocoaPodVersion(Cake.Core.ICakeContext)">
+            <summary>
+            Returns the version of CocoaPods
+            </summary>
+            <returns>The pod version.</returns>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Cake.CocoaPods.CocoaPodAliases.CocoaPodVersion(Cake.Core.ICakeContext,Cake.CocoaPods.CocoaPodSettings)">
+            <summary>
+            Returns the version of CocoaPods
+            </summary>
+            <returns>The pod version.</returns>
+            <param name="context">The context.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.CocoaPods.CocoaPodAliases.CocoaPodRepoUpdate(Cake.Core.ICakeContext)">
+            <summary>
+            Updates the CocoaPods repo
+            </summary>
+            <param name="context">The context.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.CocoaPods.CocoaPodAliases.CocoaPodRepoUpdate(Cake.Core.ICakeContext,Cake.CocoaPods.CocoaPodSettings)">
+            <summary>
+            Updates the CocoaPods repo
+            </summary>
+            <param name="context">The context.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="T:Cake.CocoaPods.NamespaceDoc">
+            <summary>
+            This namespace contain types 
+            representing data used for interaction with CocoaPods.
+            </summary>
+        </member>
+        <member name="T:Cake.XCode.XCodeSdk">
+            <summary>
+            XCode sdk info.
+            </summary>
+        </member>
+        <member name="P:Cake.XCode.XCodeSdk.DisplayName">
+            <summary>
+            Gets or sets the display name of the SDK.
+            </summary>
+            <value>The display name.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeSdk.SdkValue">
+            <summary>
+            Gets or sets the SDK value to use in XCodeBuild.
+            </summary>
+            <value>The sdk value.</value>
+        </member>
+        <member name="T:Cake.XCode.XCodeSettings">
+            <summary>
+            XCode settings.
+            </summary>
+        </member>
+        <member name="P:Cake.XCode.XCodeSettings.ToolPath">
+            <summary>
+            Gets or sets the xcodebuild path.
+            </summary>
+            <value>The tool path.</value>
+        </member>
+        <member name="T:Cake.XCode.XCodeBuildSettings">
+            <summary>
+            XCode build settings.
+            </summary>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.Verbose">
+            <summary>
+            Provide additional status output
+            </summary>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.CheckFirstLaunchStatus">
+            <summary>
+            Check if any First Launch tasks need to be performed
+            </summary>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.Project">
+            <summary>
+            Builds the given Project NAME
+            </summary>
+            <value>The name of the project.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.Target">
+            <summary>
+            Builds the given Target NAME
+            </summary>
+            <value>The name of the target.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.AllTargets">
+            <summary>
+            Builds all the targets
+            </summary>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.Workspace">
+            <summary>
+            Builds the given Workspace
+            </summary>
+            <value>The  workspace.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.Scheme">
+            <summary>
+            Builds the given Scheme NAME
+            </summary>
+            <value>The name of the scheme.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.Configuration">
+            <summary>
+            Use the build configuration NAME for building each target
+            </summary>
+            <value>The name of the configuration.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.XcConfig">
+            <summary>
+            Apply the build settings defined in the file as overrides
+            </summary>
+            <value>The build settings file.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.Arch">
+            <summary>
+            Build each target for the given architecture; this will override architectures defined in the project
+            </summary>
+            <value>The architecture to build.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.Sdk">
+            <summary>
+            The SDK to use as the base SDK when building the project
+            </summary>
+            <value>The value of the sdk.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.Toolchain">
+            <summary>
+            Use the given toolchain
+            </summary>
+            <value>The name or identifier of the toolchain.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.Destination">
+            <summary>
+            Use the destination described by key value pairs
+            </summary>
+            <value>The destination key value pairs.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.DestinationTimeout">
+            <summary>
+            The timeout in seconds to wait for while searching for the destination device
+            </summary>
+            <value>The timeout in seconds.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.ParallelizeTargets">
+            <summary>
+            Build independent targets in parallel
+            </summary>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.Jobs">
+            <summary>
+            Specify the maximum number of concurrent build operations
+            </summary>
+            <value>The maximum number of concurrent jobs.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.DryRun">
+            <summary>
+            Do everything except actually running the commands
+            </summary>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.ResultBundlePath">
+            <summary>
+            Specifies the directory where a result bundle describing what occurred will be placed
+            </summary>
+            <value>The result bundle path.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.DerivedDataPath">
+            <summary>
+            Specifies the directory where build products and other derived data will go
+            </summary>
+            <value>The derived data path.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.ArchivePath">
+            <summary>
+            Specifies the directory where any created archives will be placed, or the archive that should be exported
+            </summary>
+            <value>The archive path.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.ExportArchive">
+            <summary>
+            Specifies that an archive should be exported
+            </summary>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.ExportFormat">
+            <summary>
+            Specifies the format that the archive should be exported as (e.g. ipa, pkg, app)
+            </summary>
+            <value>The export format.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.ExportPath">
+            <summary>
+            Specifies the destination for the product exported from an archive
+            </summary>
+            <value>The export path.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.ExportProvisioningProfile">
+            <summary>
+            Specifies the provisioning profile that should be used when re-signing the exported archive; if possible, implies a signing identity
+            </summary>
+            <value>The export provisioning profile name.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.ExportSigningIdentity">
+            <summary>
+            Specifies the codesigning identity that should be used to re-sign the exported archive
+            </summary>
+            <value>The export signing identity name.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.ExportInstallerIdentity">
+            <summary>
+            specifies the installer signing identity that should be used during export; this may be inferable from the ExportSigningIdentity
+            </summary>
+            <value>The export installer identity.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.ExportWithOriginalSigningIdentity">
+            <summary>
+            Specifies that the signing identity used to create the archive should be used to sign the exported product
+            original signing identity.
+            </summary>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.SkipUnavailableActions">
+            <summary>
+            Specifies that scheme actions that cannot be performed should be skipped instead of causing a failure
+            </summary>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.ExportLocalizations">
+            <summary>
+            Exports completed and outstanding project localizations
+            </summary>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.LocalizationPath">
+            <summary>
+            Specifies a path to XLIFF localization files
+            </summary>
+            <value>The localization path.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.ExportLanguage">
+            <summary>
+            Specifies optional ISO 639-1 target languages included in a localization export 
+            </summary>
+            <value>The export language.</value>
+        </member>
+        <member name="P:Cake.XCode.XCodeBuildSettings.Clean">
+            <summary>
+            Gets or sets a value indicating whether project should be cleaned.
+            </summary>
+            <value><c>true</c> if project should be cleaned; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Cake.XCode.XCodeBuildSettings.ExportFormatType">
+            <summary>
+            Export format type.
+            </summary>
+        </member>
+        <member name="F:Cake.XCode.XCodeBuildSettings.ExportFormatType.App">
+            <summary>
+            A .app package
+            </summary>
+        </member>
+        <member name="F:Cake.XCode.XCodeBuildSettings.ExportFormatType.Pkg">
+            <summary>
+            A .pkg installer
+            </summary>
+        </member>
+        <member name="F:Cake.XCode.XCodeBuildSettings.ExportFormatType.Ipa">
+            <summary>
+            An iPhone/iPad .ipa
+            </summary>
+        </member>
+        <member name="T:Cake.XCode.XCodeAliases">
+            <summary>
+            XCode aliases.
+            </summary>
+        </member>
+        <member name="M:Cake.XCode.XCodeAliases.XCodeSdks(Cake.Core.ICakeContext)">
+            <summary>
+            Gets the various SDK's installed and available on the machine
+            </summary>
+            <returns>The xcode sdks.</returns>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Cake.XCode.XCodeAliases.XCodeSdks(Cake.Core.ICakeContext,Cake.XCode.XCodeSettings)">
+            <summary>
+            Gets the various SDK's installed and available on the machine
+            </summary>
+            <returns>The xcode sdks.</returns>
+            <param name="context">The context.</param> 
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:Cake.XCode.XCodeAliases.XCodeBuild(Cake.Core.ICakeContext,Cake.XCode.XCodeBuildSettings)">
+            <summary>
+            Runs xcodebuild with the given settings.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="T:Cake.XCode.NamespaceDoc">
+            <summary>
+            This namespace contain types 
+            representing data used for interaction with xcodebuild.
+            </summary>
+        </member>
+    </members>
+</doc>

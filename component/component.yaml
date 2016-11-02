@@ -1,0 +1,16 @@
+version: 2.1.0
+name: Chameleon
+id: Chameleon
+publisher: Reality Check, Inc.
+publisher-url: https://reality.cm
+src-url: https://github.com/Reality-Check-Inc/Chameleon/tree/master
+summary: Chameleon is a lightweight, yet powerful, color framework for iOS.
+icons:
+  - icons/Chameleon_128x128.png
+  - icons/Chameleon_512x512.png
+libraries:
+  ios-unified: ../output/unified/Chameleon.dll
+samples:
+  - name: "Chameleon Sample"
+    path:  ../samples/ChameleonSample.sln
+no_build: true
