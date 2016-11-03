@@ -11,3 +11,7 @@ http://cakebuild.net/docs/tutorials/setting-up-a-new-project
 curl -Lsfo build.sh http://cakebuild.net/download/bootstrapper/osx  
 chmod +x build.sh  
 ./build.sh  
+
+### Update Component
+./build.sh  
+mono tools/XamarinComponent/tools/xamarin-component.exe package component
