@@ -24,13 +24,31 @@ namespace ChameleonSample
 			NavigationController.HideNavigationBarHairline (true);
 
 			var picture = UIImage.FromBundle ("africa-blue.jpg");
-			var colors = ChameleonColorArray.GetColors(picture, true);
+			var colors = ChameleonColorArray.GetColors(picture, false);
 			var average = ChameleonColor.GetImageAverageColor (picture);
 			var complement = ChameleonColor.GetComplementaryColor(average);
 			//View.BackgroundColor = average;
 			var colorArray = new UIColor[] { colors[0], average, complement};
 			var gradient = ChameleonColor.GetGradientColor(GradientStyle.Radial, View.Bounds, colorArray);
 			View.BackgroundColor = gradient;
+
+			nfloat y = NavigationController.NavigationBar.Bounds.Height + UIApplication.SharedApplication.StatusBarFrame.Height + 4;
+			nfloat size = 12;
+			nfloat left = 4;
+			// Show the colors in the image color scheme
+			ShowColorArray(left, y, size, colorArray);
+
+			// show colors from the color scheme methods
+			var baseColor = colorArray[1];
+			left += size + 4;
+			// analogous color scheme based on the middle color
+			ShowColorArray(left, y, size, ChameleonColorArray.GetColors(ColorScheme.Analogous, baseColor, true));
+			left += size + 4;
+			// complementary color scheme based on the middle color
+			ShowColorArray(left, y, size, ChameleonColorArray.GetColors(ColorScheme.Complementary, baseColor, true));
+			left += size + 4;
+			// triadic color scheme based on the middle color
+			ShowColorArray(left, y, size, ChameleonColorArray.GetColors(ColorScheme.Triadic, baseColor, true));
 
 			// Let's create a snapshot to use as a splashscreen...
 			string key = "SavedScreenShot";
@@ -44,6 +62,19 @@ namespace ChameleonSample
 				Console.WriteLine("already saved screenshots to photos");
 			}
 
+		}
+
+		void ShowColorArray(nfloat left, nfloat top, nfloat size, UIColor[] colorArray)
+		{
+			Console.WriteLine("{0} colors in scheme", colorArray.Length);
+			nfloat y = top;
+			for (int i = 0; i < colorArray.Length; i++)
+			{
+				UIView view = new UIView(new CGRect(left, y, size, size));
+				view.BackgroundColor = colorArray[i];
+				View.AddSubview(view);
+				y += size + 4;
+			}
 		}
 
 		// Get the luminance of a color
