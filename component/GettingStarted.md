@@ -1,22 +1,23 @@
-**Chameleon** is a lightweight, yet powerful, color framework for iOS. It is 
-built on the idea that software applications should function effortlessly while
-simultaneously maintaining their beautiful interfaces.
+**Chameleon-RCI** is a Xamarin Component that provides **Chameleon**, a lightweight, yet powerful, color framework for iOS. It is built on the idea that software applications should function effortlessly while simultaneously maintaining their beautiful interfaces.
 
-With Chameleon, you can easily stop tinkering with RGB values, wasting hours 
-figuring out the right color combinations to use in your app, and worrying 
-about whether your text will be readable on the various background colors of 
-your app. 
+With Chameleon, you can easily stop tinkering with RGB values, wasting hours figuring out the right color combinations to use in your app, and worrying about whether your text will be readable on the various background colors of your app. 
 
-## Features
+### Features
 
 ![Features](http://i.imgur.com/lA4J37o.png)
 
-### Flat Colors
+## Product Features
 
-Chameleon features over 24 hand-picked colors that come in both light and 
-dark shades:
+### 100% Flat & Gorgeous
+
+Chameleon features over 24 hand-picked colors that come in both light and dark shades. 
+
+![Swatches](http://i.imgur.com/wkGGWkN.png)
+
+To generate a specific color:
 
     var color = ChameleonColor.FlatGreen;
+    var colorDark = ChameleonColor.FlatGreenDark;
 
 There are two ways to generate a random flat color. If you have no preference 
 as to whether you want a light shade or a dark shade, you can do the following:
@@ -27,66 +28,55 @@ Otherwise, you can perform the following method call to specify whether it
 should return either a light or dark shade:
 
     var color = ChameleonColor.GetRandomColor(ShadeStyle.Light);
+    var colorDark = ChameleonColor.GetRandomColor(ShadeStyle.Dark);
 
+### Flat Color Schemes
 
-![Swatches](http://i.imgur.com/wkGGWkN.png)
+Chameleon equips you with 3 different classes of flat color schemes that can be generated from a flat or non-flat color. *In the examples below, the white stars indicate the color used to generate the schemes.*
 
-#### Lighter and Darker Colors
+###### Analogous Flat Color Scheme
 
-Sometimes all you need is a color a shade lighter or a shade darker. 
-Well for those rare, but crucial moments, Chameleon's got you covered. 
-You can now lighten any color the following way:
+![Analogous Scheme](http://i.imgur.com/cPAkSWA.png)
 
-    var lighter = color.LightenByPercentage(0.5f);
+    var scheme = ChameleonColorArray.GetColors(ColorScheme.Analogous, ChameleonColor.FlatPurple, true);
 
-You can also generate a darker version of a color:
+###### Complementary Flat Color Scheme
 
-    var darker = color.DarkenByPercentage(0.5f);
+![Complementary Scheme](http://i.imgur.com/kisXJsu.png)
 
-#### Complementary Colors
+    var scheme = ChameleonColorArray.GetColors(ColorScheme.Complementary, ChameleonColor.FlatCoffee, true);
 
-To generate a complementary color, perform the following method call, 
-remembering to specify the color whose complement you want:
+###### Triadic Flat Color Scheme
 
-    var complement = ChameleonColor.GetComplementaryColor(color);
+![Triadic Scheme](http://i.imgur.com/Cy452jQ.png)
+
+    var scheme = ChameleonColorArray.GetColors(ColorScheme.Triadic, ChameleonColor.FlatRed, true);
 
 ### Contrasting Text
-
-With a plethora of color choices available for text, it's difficult to choose 
-one that all users will appreciate and be able to read. Whether you're in doubt 
-of your text and tint color choices, or afraid to let users customize their 
-profile colors because it may disturb the legibility or usability of the app, 
-you no longer have to worry. With Chameleon, you can ensure that all text 
-stands out independent of the background color.
-
-The contrasting color feature returns either a dark color a light color 
-depending on what the Chameleon algorithm believes is a better choice:
+With a plethora of color choices available for text, it's difficult to choose one that all users will appreciate and be able to read. Whether you're in doubt of your text and tint color choices, or afraid to let users customize their profile colors because it may disturb the legibility or usability of the app, you no longer have to worry. With Chameleon, you can ensure that all text stands out independent of the background color.
 
     var contrast = ChameleonColor.GetContrastingBlackOrWhiteColor(color, false);
 
+Oh... Chameleon works with the status bar as well. : )
+
 ![Status Bar](http://s29.postimg.org/i1syd7bkn/Contrast.gif)
 
-### Colors From Images
+    this.SetStatusBarStyle (StatusBarStyle.Contrast);
 
-Chameleon allows you to seamlessly extract non-flat or flat color schemes from 
-images without hassle. You can also generate the average color from an image with 
-ease. You can now mold the UI colors of a profile, or product based on an image!
+### Navigation Bar Hairline
 
-    var colors = ChameleonColorArray.GetColors(image, false);
+If you're seeking a true flat look, you can hide the hairline at the bottom 
+of the navigation bar by doing the following: 
 
-To extract the average color from an image, you can also do:
+    NavigationController.HideNavigationBarHairline(true);
+	
+![No Hairline](http://i.imgur.com/tjwx53y.png)
 
-    var average = ChameleonColor.GetImageAverageColor(image);
+### Themes ![Beta](http://i.imgur.com/JyYiUJq.png)
 
-![Colors from images](http://i.imgur.com/6JjFzHo.png)
+Chameleon now allows you easily theme your app with as little as **one line of code**. You can set a theme for all your views, and for specific views as well.
 
-## Theme Methods
-
-With Chameleon, you can now specify a global color theme with simply one line 
-of code (It even takes care of dealing with the status bar style as well)! 
-Here's one of three methods to get you started. `ContentStyle` allows you to 
-decide whether text and a few other elements should be white, black, or 
-whichever contrasts more over any UI element's `BackgroundColor`. 
+![Themes](http://i.imgur.com/ypfqpIn.png)
 
 To set a global theme, you can do the following in your app delegate:
 
@@ -104,21 +94,51 @@ problem, Chameleon allows you to override the global theme in any
         ChameleonColor.FlatBlue,
 		ContentStyle.Contrast);
 
-### Contrasting Status Bar Styles
+### Colors From Images 
 
-Many apps on the market, even the most popular ones, overlook this aspect of 
-a beautiful app: the status bar style. Chameleon has done something no other 
-framework has... it has created a new status bar style: 
-`StatusBarStyle.Contrast`. Whether you have a `UIViewController` embedded in 
-a `UINavigationController`, or not, you can do the following:
+Chameleon allows you to seamlessly extract non-flat or flat color schemes from images without hassle. You can also generate the average color from an image with ease. You can now mold the UI colors of a profile, or product based on an image!
 
-    this.SetStatusBarStyle (StatusBarStyle.Contrast);
+![Colors from images](http://i.imgur.com/6JjFzHo.png)
 
-### Navigation Bar Hairline
+Non-flat color scheme from image:
 
-If you're seeking a true flat look, you can hide the hairline at the bottom 
-of the navigation bar by doing the following: 
+    var colors = ChameleonColorArray.GetColors(image, false);
 
-    NavigationController.HideNavigationBarHairline(true);
-	
-![No Hairline](http://i.imgur.com/tjwx53y.png)
+Flat color scheme from image:
+
+    var colors = ChameleonColorArray.GetColors(image, true);
+
+To extract the average color from an image, you can also do:
+
+    var average = ChameleonColor.GetImageAverageColor(image);
+
+### Gradient Colors
+With iOS 7 & 8, Apple mainstreamed flat colors. Now, with the release of iOS 9, Chameleon strives to elevate the game once more. Say hello to gradient colors. Using one line of code, you can easily set any object's color properties to a gradient (background colors, text colors, tint colors, etc). Other features, like Chameleon's contrasting feature, can also be applied to create a seamless product. Experimentation is encouraged, and gutsiness is applauded!
+
+![Gradients](http://i.imgur.com/7hTa5Pd.png)
+
+![](http://i.imgur.com/2jN72eh.png)
+
+    var colorArray = new UIColor[] { ChameleonColor.FlatYellow, ChameleonColor.FlatOrange };
+    var gradient = ChameleonColor.GetGradientColor(GradientStyle.LeftToRight, View.Bounds, colorArray);
+
+
+####Palettes
+##### Storyboard Add-On
+Using Chameleon's awesome palette in Storyboard is easy! Simply download and install [Chameleon Palette](https://github.com/ViccAlexander/Chameleon/blob/master/Extras/Chameleon.dmg?raw=true).
+
+Once installed, make sure to restart Xcode. You'll find all of Chameleon's colors in the Palette Color Picker whenever they're needed! :)
+
+![Chameleon Palette](http://i.imgur.com/XqpFUSt.png)
+
+![Chameleon Palette](http://i.imgur.com/QhhPFHY.gif)
+
+##### Photoshop Add-On
+Using Chameleon's awesome palette in Sketch is easy! Simply download and install [Photoshop Palette](https://github.com/ViccAlexander/Chameleon/blob/master/Extras/Chameleon_Photoshop.aco?raw=true).
+
+##### Sketch Add-On
+Using Chameleon's awesome palette in Sketch is easy! Simply download and install [Sketch Palette](https://github.com/ViccAlexander/Chameleon/blob/master/Extras/Chameleon.sketchpalette?raw=true).
+
+## Change Log
+
+### See [Changelog.md](https://github.com/ViccAlexander/Chameleon/blob/master/CHANGELOG.md) 👀

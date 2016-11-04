@@ -43,5 +43,11 @@
 	</array>
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>Main</string>
+	<key>CFBundleName</key>
+	<string>ChameleonSample</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Save screenshot to photo library.</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Resources/Images.xcassets/LaunchImage.launchimage</string>
 </dict>
 </plist>
