@@ -3,7 +3,7 @@ libraries:
 icons: 
   - Chameleon-RCI_128x128.png
   - Chameleon-RCI_512x512.png
-version: 2.1.0
+version: 2.1.0.2
 details: Details.md
 getting-started: GettingStarted.md
 samples: 
